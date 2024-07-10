@@ -20,7 +20,7 @@
   "dependencies": {
     "@element-plus/nuxt": "^1.0.9",
     "nuxt": "^3.12.3",
-    "vue": "latest"
+    "vue": "3.4.31"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.12.0",
