@@ -1,0 +1,29 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build  --dotenv env/.env.prod",
+    "build:dev": "nuxt build  --dotenv env/.env.dev",
+    "clean": "nuxt cleanup",
+    "preview": "nuxt preview",
+    "run": "nuxt dev  --dotenv env/.env.prod",
+    "run:dev": "nuxt dev  --dotenv env/.env.dev",
+    "generate": "nuxt generate --dotenv env/.env.prod",
+    "generate:dev": "nuxt generate --dotenv env/.env.dev",
+    "update": "nuxt upgrade -f",
+    "prepare": "nuxt prepare",
+    "analyze": "nuxt build --dotenv env/.env.prod --analyze",
+    "analyze:dev": "nuxt build --dotenv env/.env.dev --analyze",
+    "pnpm:i": "pnpm i"
+  },
+  "dependencies": {
+    "@element-plus/nuxt": "^1.0.9",
+    "nuxt": "^3.12.3",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.0",
+    "sass": "^1.77.7"
+  }
+}
