@@ -1,12 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate: '2024-07-10',
   devtools: { enabled: true },
   modules: ["@element-plus/nuxt", "@nuxtjs/tailwindcss"],
-  compatibilityDate: '2024-07-10',
   app: {
     head: {
+      title: '标签栏网站名称',
       charset: 'utf-8',
-      bodyAttrs:{style: 'height: 100%; margin:0; padding: 0;' },
+      bodyAttrs: { style: 'height: 100%; margin:0; padding: 0;' },
+      link: [{ rel: 'icon', href: '/favicon.ico', type: "images/x-icon" }],
       meta: [
         {
           hid: "description", name: 'description', content: 'description'
@@ -22,18 +24,23 @@ export default defineNuxtConfig({
         { "http-equiv": "Cache-Control", content: "no-transform" },
 
       ],
-      link: [
-        { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' }
-      ],
     },
+  },
+  // https://nuxt.com.cn/docs/api/composables/use-runtime-config
+  runtimeConfig: {
+    // 对客户端暴露的内容
+    public: {
+      proxyUrl: process.env.NUXT_PROXY_URL,
+    }
   },
   // 指定路由配置
   routeRules: {
     // 请求转发
-    '/proxy/**': {
+    '/prod-api/**': {
       proxy: `${process.env.NUXT_BASE_URL}/**`,
     },
   },
+
   postcss: {
     plugins: {
       "autoprefixer": {},

@@ -1,12 +1,13 @@
 import { ElMessage } from 'element-plus'
 const fetch = async <T>(url: string, options: any, customHeader?: Object): Promise<T> => {
+  const { public: { proxyUrl } } = useRuntimeConfig()
   return new Promise((resolve, reject) => {
-    useFetch('/proxy' + url, {
+    useFetch(proxyUrl + url, {
       headers: {
         ...customHeader
       },
       ...options,
-    }).then(res => {
+    }).then((res: any) => {
       if (res.status.value == 'error') {
         console.error('网络请求失败 :>> ', res.error?.value || '网络请求失败');
         if (import.meta.client) ElMessage.error(res.error?.value?.message || res.error?.value?.statusMessage || '网络请求失败')
@@ -14,7 +15,7 @@ const fetch = async <T>(url: string, options: any, customHeader?: Object): Promi
       } else {
         resolve(res.data.value as T)
       }
-    }).catch(err => {
+    }).catch((err: any) => {
       console.error('服务器请求错误 :>> ', err);
       reject(err)
     })
