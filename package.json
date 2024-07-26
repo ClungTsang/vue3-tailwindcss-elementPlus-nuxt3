@@ -3,27 +3,23 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build  --dotenv env/.env.prod",
-    "build:dev": "nuxt build  --dotenv env/.env.dev",
+    "run": "nuxt dev  --dotenv .env --host -o",
+    "build": "nuxt build  --dotenv .env",
     "clean": "nuxt cleanup",
     "preview": "nuxt preview",
-    "run": "nuxt dev  --dotenv env/.env.prod",
-    "run:dev": "nuxt dev  --dotenv env/.env.dev",
-    "generate": "nuxt generate --dotenv env/.env.prod",
-    "generate:dev": "nuxt generate --dotenv env/.env.dev",
+    "generate": "nuxt generate --dotenv .env",
     "update": "nuxt upgrade -f",
     "prepare": "nuxt prepare",
-    "analyze": "nuxt build --dotenv env/.env.prod --analyze",
-    "analyze:dev": "nuxt build --dotenv env/.env.dev --analyze",
+    "analyze": "nuxt build --dotenv .env --analyze",
     "pnpm:i": "pnpm i"
   },
   "dependencies": {
     "@element-plus/nuxt": "^1.0.9",
-    "nuxt": "^3.12.3",
-    "vue": "3.4.31"
+    "vue": "3.4.34"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.12.0",
-    "sass": "^1.77.7"
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "nuxt": "^3.12.4",
+    "sass": "^1.77.8"
   }
 }

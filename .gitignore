@@ -5,6 +5,7 @@
 .nitro
 .cache
 dist
+.output.zip
 
 # Node dependencies
 node_modules
@@ -19,6 +20,6 @@ logs
 .idea
 
 # Local env files
-.env
 .env.*
+!.env
 !.env.example
