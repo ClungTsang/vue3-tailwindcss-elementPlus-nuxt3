@@ -1,13 +1,10 @@
+import type { Config } from 'tailwindcss'
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
-    './composables/**/*.{js,vue,ts}',
-    './components/**/*.{js,vue,ts}',
+    './components/**/*.vue',
     './layouts/**/*.vue',
     './pages/**/*.vue',
-    './plugins/**/*.{js,ts}',
-    './nuxt.config.{js,ts}',
-    './app.vue',
   ],
   theme: {
     // 参考文档 https://www.tailwindcss.cn/docs/installation
@@ -24,12 +21,23 @@ module.exports = {
 
         'brand1': '#007AFF',
         'brand2': '#F2F7FF',
-        
+
         'alert': '#D62020',
         'green': '#18C37C',
         'purple': '#9000FF',
         'orange': '#E89E42',
-      }
+      },
     },
+    // 参考文档 https://www.tailwindcss.cn/docs/font-family#using-custom-values
+    fontFamily: {
+      'sans': ['PingFang SC', 'Microsoft YaHei']
+    },
+    // 参考文档 https://tailwindcss.com/docs/font-size#customizing-your-theme
+    fontSize: {
+      'first': ['20px', '26px'],
+      'two': ['16px', '22px'],
+      'base': ['14px', '20px'],
+      'tips': ['12px', '18px']
+    }
   },
-}
+} satisfies Config
