@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="header" />
-  <div class="mt-[72px]">
+  <div class="container mx-auto h-full py-11">
     <slot />
   </div>
   <NuxtLayout name="footer" />
