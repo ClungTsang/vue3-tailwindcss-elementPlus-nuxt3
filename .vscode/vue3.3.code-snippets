@@ -1,0 +1,16 @@
+{
+  "Vue3.3代码模板": {
+    "scope": "vue",
+    "prefix": "v3.3.template",
+    "body": [
+      "<template>",
+      "\t<div>",
+      "\t\t$1",
+      "\t</div>",
+      "</template>\n",
+      "<script setup lang=\"ts\"></script>\n",
+      "<style scoped lang=\"scss\"></style>\n",
+    ],
+    "description": "Vue3.3代码模板"
+  }
+}
