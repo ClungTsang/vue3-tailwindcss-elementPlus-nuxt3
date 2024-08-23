@@ -1,0 +1,124 @@
+.flex-c {
+  @apply flex justify-center items-center;
+}
+
+.flex-ac {
+  @apply flex justify-around items-center;
+}
+
+.flex-bc {
+  @apply flex justify-between items-center;
+}
+.flex-cc {
+  @apply flex justify-center items-center;
+}
+
+.flex-ac {
+  @apply flex justify-around items-center;
+}
+
+.flex-bc {
+  @apply flex justify-between items-center;
+}
+
+/* 扩展的 flex 布局类 */
+
+.flex-sb {
+  @apply flex justify-start items-baseline;
+}
+
+.flex-sc {
+  @apply flex justify-start items-center;
+}
+
+.flex-ec {
+  @apply flex justify-end items-center;
+}
+
+.flex-se {
+  @apply flex justify-start items-end;
+}
+
+.flex-cs {
+  @apply flex justify-center items-start;
+}
+
+.flex-as {
+  @apply flex justify-around items-start;
+}
+
+.flex-ae {
+  @apply flex justify-around items-end;
+}
+
+.flex-bt {
+  @apply flex justify-between items-start;
+}
+
+.flex-be {
+  @apply flex justify-between items-end;
+}
+
+.flex-stretch {
+  @apply flex justify-center items-stretch;
+}
+
+.flex-space-evenly {
+  @apply flex justify-evenly items-center;
+}
+
+/* 如果需要逆向排列的布局，可以加上 -reverse 后缀 */
+
+.flex-cc-reverse {
+  @apply flex flex-row-reverse justify-center items-center;
+}
+
+.flex-ac-reverse {
+  @apply flex flex-row-reverse justify-around items-center;
+}
+
+.flex-bc-reverse {
+  @apply flex flex-row-reverse justify-between items-center;
+}
+
+.flex-ec-reverse {
+  @apply flex flex-row-reverse justify-end items-center;
+}
+
+.flex-se-reverse {
+  @apply flex flex-row-reverse justify-start items-end;
+}
+
+/* 垂直方向的 flex 布局 */
+
+.flex-col-cc {
+  @apply flex flex-col justify-center items-center;
+}
+.flex-col-sc {
+  @apply flex flex-col justify-start items-center;
+}
+
+.flex-col-ac {
+  @apply flex flex-col justify-around items-center;
+}
+
+.flex-col-bc {
+  @apply flex flex-col justify-between items-center;
+}
+
+.flex-col-se {
+  @apply flex flex-col justify-start items-end;
+}
+.flex-col-ss {
+  @apply flex flex-col justify-start items-start;
+}
+
+.flex-col-es {
+  @apply flex flex-col justify-end items-start;
+}
+.flex-col-ec {
+  @apply flex flex-col justify-end items-center;
+}
+.flex-col-ee {
+  @apply flex flex-col justify-end items-end;
+}
