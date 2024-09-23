@@ -20,6 +20,9 @@
 .flex-bc {
   @apply flex justify-between items-center;
 }
+.flex-bs {
+  @apply flex justify-between items-start;
+}
 
 /* 扩展的 flex 布局类 */
 
@@ -102,8 +105,14 @@
   @apply flex flex-col justify-around items-center;
 }
 
+.flex-col-bs {
+  @apply flex flex-col justify-between items-start;
+}
 .flex-col-bc {
   @apply flex flex-col justify-between items-center;
+}
+.flex-col-be {
+  @apply flex flex-col justify-between items-end;
 }
 
 .flex-col-se {
