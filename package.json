@@ -1,25 +1,26 @@
 {
-  "name": "nuxt-app",
+  "name": "Nuxt3-TailwindCSS-ElementPlus",
   "private": true,
   "type": "module",
   "scripts": {
-    "run": "nuxt dev  --dotenv .env --host -o",
-    "build": "nuxt build  --dotenv .env",
+    "run": "nuxt dev  --dotenv .env.production --host -o",
+    "run:dev": "nuxt dev  --dotenv .env.development --host -o",
+    "run:test": "nuxt dev  --dotenv .env.test --host -o",
+    "build": "nuxt build  --dotenv .env.production",
     "clean": "nuxt cleanup",
     "preview": "nuxt preview",
-    "generate": "nuxt generate --dotenv .env",
+    "generate": "nuxt generate --dotenv .env.production",
     "update": "nuxt upgrade -f",
     "prepare": "nuxt prepare",
-    "analyze": "nuxt build --dotenv .env --analyze",
-    "pnpm:i": "pnpm i"
+    "analyze": "nuxt build --dotenv .env.production --analyze"
   },
   "dependencies": {
-    "@element-plus/nuxt": "^1.0.9",
-    "vue": "3.4.34"
+    "@element-plus/nuxt": "^1.0.10",
+    "vue": "3.5.8"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.12.1",
-    "nuxt": "^3.12.4",
+    "nuxt": "^3.13.2",
     "sass": "^1.77.8"
   }
 }
