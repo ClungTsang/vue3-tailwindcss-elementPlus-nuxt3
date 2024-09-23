@@ -1,16 +1,20 @@
 <template>
-  <header class="header fixed top-0 left-0 right-0 flex items-center justify-center z-50 shadow-sm bg-gray8 text-gray2">
-    顶部栏
-  </header>
-  <!-- 占位符 -->
-  <div class="h-[72px]"></div>
+  <div>
+    <header :class="`header flex items-center justify-center px-first min-w-1024 w-full z-10 bg-gray8`">
+      顶部栏
+    </header>
+  </div>
 </template>
+
 <script setup lang="ts">
 
 </script>
+
 <style lang="scss" scoped>
 .header {
-  height: 72px;
-  width: 100%;
+  background-size: 100% 200%;
+  height: 80px;
+  flex-shrink: 0;
 }
+
 </style>
