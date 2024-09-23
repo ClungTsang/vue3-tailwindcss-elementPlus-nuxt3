@@ -4,6 +4,13 @@
 
 /* 用于定义全局的基础样式。这个指令通常用来编写最基础的、针对所有元素的样式，比如全局的 HTML 元素样式重置或一些标准化的样式。 */
 @layer base {
+  /* 更改elementPlus提供的默认样式 */
+  * {
+    /* --el-checkbox-checked-text-color: theme("colors.gray2");
+    --el-checkbox-checked-bg-color: theme("colors.gray2");
+    --el-checkbox-checked-input-border-color: theme("colors.gray2");
+    --el-slider-main-bg-color: theme("colors.gray2"); */
+  }
   html {
     /* 全局自定义字体 https://www.tailwindcss.cn/docs/font-family#customizing-the-default-font */
     /* font-family: "PingFang SC", "Microsoft YaHei", "system-ui", "Helvetica Neue", Helvetica, Arial,
@@ -24,7 +31,7 @@
   ::-webkit-scrollbar {
     display: none; /* 对于Webkit浏览器 */
   }
-
+  
   /* 隐藏滚动条 */
   body {
     -ms-overflow-style: none; /* 对于IE和Edge */
@@ -53,14 +60,13 @@
   .vertical-divider {
     width: 1px;
     height: 40px;
-    background: theme("colors.border-color");
-    margin: 0 32px;
+    @apply mx-first bg-border-color bg-opacity-50;
   }
   /* 水平分割线 */
   .horizon-divider {
     width: 100%;
     height: 1px;
-    background: theme("colors.border-color");
+    @apply bg-border-color bg-opacity-50;
   }
 
   /* 或者 */
@@ -71,6 +77,6 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: 0.7px;
-    margin: 0 5px;
+    @apply mx-base;
   }
 }

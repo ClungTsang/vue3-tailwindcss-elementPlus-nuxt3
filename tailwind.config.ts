@@ -30,7 +30,17 @@ export default <Partial<Config>>{
         orange: "#E89E42",
 
         "tips-color": "#999999",
-        "border-color": "#D9D9D9",
+        "border-color": "#EAEAEA",
+      },
+      width: {
+        inherit: "inherit",
+      },
+      height: {
+        large: "30px",
+        first: "26px",
+        two: "22px",
+        base: "20px",
+        tips: "18px",
       },
       padding: {
         first: "40px",
@@ -56,9 +66,10 @@ export default <Partial<Config>>{
       maxWidth: {
         1024: "1024px",
         1280: "1280px",
+        1920: "1920px",
       },
       fontSize: {
-        large: ["24px", "30px"],
+        large: ["24px", "32px"],
         first: ["20px", "26px"],
         two: ["16px", "22px"],
         base: ["14px", "20px"],
