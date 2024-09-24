@@ -3,13 +3,10 @@
     底部栏
   </footer>
 </template>
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 <style lang="scss" scoped>
 .footer {
   height: 70px;
   width: 100vw;
-
 }
 </style>
