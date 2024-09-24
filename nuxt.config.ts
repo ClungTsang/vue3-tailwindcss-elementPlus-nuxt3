@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   modules: ["@element-plus/nuxt", "@nuxtjs/tailwindcss"],
   app: {
     head: {
-      title: "Nuxt3 + Tailwindcss快速开发模板",
+      title: "Nuxt3 + TailwindCSS + ElementPlus 的快速开发模板 ",
       charset: "utf-8",
       bodyAttrs: { style: "height: 100%; margin:0; padding: 0;" },
       link: [{ rel: "icon", href: "/favicon.ico", type: "images/x-icon" }],
@@ -17,7 +17,7 @@ export default defineNuxtConfig({
         {
           hid: "description",
           name: "description",
-          content: "your description",
+          content: "Nuxt3 + TailwindCSS + ElementPlus 的快速开发模板 ",
         },
         { name: "keywords", content: "your keywords" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -31,24 +31,28 @@ export default defineNuxtConfig({
       ],
     },
   },
+  // 参考文档：https://nitro.unjs.io/guide
   nitro: {
     // 预渲染规则：默认全部预渲染
+    // 参考文档：https://nuxt.com/docs/getting-started/prerendering#selective-pre-rendering
     prerender: {
       // 允许爬取
-      crawlLinks: true,
+      crawlLinks: false,
       // 生效规则
       routes: [
-        "/robots.txt"
+        "/robots.txt" // 生成利于搜索引擎爬取的规则文件
       ],
       // 忽略规则
       // ignore: ['/user'],
     },
   },
+  //参考文档：https://nuxtseo.com/robots/api/config
+  // 利于搜索引擎爬取的规则
   robots: {
-    // allow: ["/"], // 自定义填写生效规则
-    // disallow: ['/user'], // 自定义填写忽略规则
+    // allow: ["/"], // 自定义填写允许爬取的路径
+    // disallow: ['/user'], // 自定义填写不允许爬取的路径
   },
-  // 参考文档 https://nuxt.com.cn/docs/api/composables/use-runtime-config
+  // 参考文档：https://nuxt.com.cn/docs/api/composables/use-runtime-config
   runtimeConfig: {
     // 只有服务端请求时可用私密属性
     // siteUrl: process.env.NUXT_SITE_URL,
@@ -59,6 +63,8 @@ export default defineNuxtConfig({
       siteUrl: process.env.NUXT_SITE_URL,
     },
   },
+  // 参考文档：https://nuxt.com/docs/getting-started/prerendering#selective-pre-rendering
+  // 参考文档：https://nitro.unjs.io/config#routerules
   // 指定路由配置
   routeRules: {
     // 请求转发

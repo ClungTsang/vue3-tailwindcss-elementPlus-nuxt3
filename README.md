@@ -3,6 +3,22 @@
 > - 查看[Nuxt3官方文档](https://nuxt.com/)
 > - 查看[Tailwind文档](https://tailwindcss.com/)
 
+## 要求
+- Node.js-`18.20.4` lts（长期支持）版本
+- pnpm-`9.3.0`版本
+- （非必要）使用[nvm](https://github.com/coreybutler/nvm-windows)来管理node版本
+
+## 切换国内镜像源
+``` bash 
+npm config set registry https://registry.npmmirror.com
+```
+
+## 安装pnpm包管理器
+如果安装了pnpm请跳过该步骤
+``` bash 
+npm i pnpm@9.3.0 -g
+```
+
 ## 安装依赖
 ``` bash 
 pnpm i 
@@ -24,7 +40,7 @@ pnpm preview
 ```
 
 ## 部署项目使用pm2守护进程
-> [pm2文档](https://ezdoc.cn/docs/pm2/quick-start)  
+[查看](https://ezdoc.cn/docs/pm2/quick-start)pm2文档  
 
 ## 开启进程守护
 ```bash
@@ -40,11 +56,11 @@ pm2 kill
 ```
 ## 删除指定进程
 ```bash
-pm2 kill <项目名称>
+pm2 kill nuxt3-template
 ```
 ## 重启进程守护：
 ```bash
-pm2 restart <项目名称>
+pm2 restart nuxt3-template
 ```
 
 
