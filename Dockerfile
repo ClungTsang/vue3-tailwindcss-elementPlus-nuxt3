@@ -2,7 +2,7 @@
 FROM node:18.20.4-alpine AS builder
 
 # 设置工作目录
-WORKDIR /3dcardml
+WORKDIR /nuxt3-template
 
 # 复制 package.json 和 pnpm-lock.yaml（如果存在）到工作目录
 COPY package.json pnpm-lock.yaml* ./
@@ -25,13 +25,13 @@ RUN pnpm build
 FROM node:18.20.4-alpine
 
 # 设置工作目录
-WORKDIR /3dcardml
+WORKDIR /nuxt3-template
 
 # 复制构建后的文件到最终的工作目录
-COPY --from=builder /3dcardml/.output /3dcardml/.output
-COPY --from=builder /3dcardml/node_modules /3dcardml/node_modules
-COPY --from=builder /3dcardml/package.json /3dcardml/package.json
-COPY --from=builder /3dcardml/ecosystem.config.js /3dcardml/ecosystem.config.js
+COPY --from=builder /nuxt3-template/.output /nuxt3-template/.output
+COPY --from=builder /nuxt3-template/node_modules /nuxt3-template/node_modules
+COPY --from=builder /nuxt3-template/package.json /nuxt3-template/package.json
+COPY --from=builder /nuxt3-template/ecosystem.config.js /nuxt3-template/ecosystem.config.js
 
 # 设置环境变量 NODE_ENV 为生产环境
 ENV NODE_ENV=production
