@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   devServer: {
     port: 8962
   },
-  modules: ["@element-plus/nuxt", "@nuxtjs/tailwindcss"],
+  modules: ["@element-plus/nuxt", "@nuxtjs/tailwindcss", "@vueuse/nuxt"],
   app: {
     head: {
       title: "Nuxt3 + TailwindCSS + ElementPlus 的快速开发模板 ",
@@ -95,6 +95,7 @@ export default defineNuxtConfig({
   // 导入第三方样式库
   css: [
     "~/assets/css/flex.css",
+    "~/assets/css/btn.css",
   ],
   postcss: {
     plugins: {
