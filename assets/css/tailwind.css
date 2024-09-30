@@ -4,12 +4,11 @@
 
 /* 用于定义全局的基础样式。这个指令通常用来编写最基础的、针对所有元素的样式，比如全局的 HTML 元素样式重置或一些标准化的样式。 */
 @layer base {
-  /* 更改elementPlus提供的默认样式 */
   * {
-    /* --el-checkbox-checked-text-color: theme("colors.gray2");
+    /* --el-color-primary: theme("colors.gray2");
+    --el-checkbox-checked-text-color: theme("colors.gray2");
     --el-checkbox-checked-bg-color: theme("colors.gray2");
-    --el-checkbox-checked-input-border-color: theme("colors.gray2");
-    --el-slider-main-bg-color: theme("colors.gray2"); */
+    --el-checkbox-checked-input-border-color: theme("colors.gray2"); */
   }
   html {
     /* 全局自定义字体 https://www.tailwindcss.cn/docs/font-family#customizing-the-default-font */
@@ -31,7 +30,6 @@
   ::-webkit-scrollbar {
     display: none; /* 对于Webkit浏览器 */
   }
-  
   /* 隐藏滚动条 */
   body {
     -ms-overflow-style: none; /* 对于IE和Edge */

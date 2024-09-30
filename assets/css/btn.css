@@ -1,0 +1,64 @@
+/* 按钮样式1 - 大按钮 */
+.btn-normal-first {
+  padding: 10px 16px;
+  border: 1px solid theme("colors.gray5");
+  @apply btn-color text-first font-normal;
+}
+
+/* 按钮样式2 */
+.btn-normal-two {
+  padding: 6px 14px;
+  width: 4rem;
+  border: 1px solid theme("colors.gray5");
+  @apply btn-color text-base font-normal;
+}
+/* 按钮样式2 */
+.btn-normal-base {
+  padding: 4px 10px;
+  width: 4rem;
+  border: 1px solid theme("colors.gray5");
+  @apply btn-color text-base font-normal;
+}
+
+/* 标签颜色 */
+.label-color {
+  @apply bg-gray7 text-gray2 rounded flex items-center justify-center gap-x-2 whitespace-nowrap;
+}
+
+/* 按钮样式 */
+.btn-color {
+  @apply btn-normal-color rounded transition-colors cursor-pointer flex items-center justify-center gap-x-2 whitespace-nowrap;
+}
+/* 按钮样式 */
+.btn-color2 {
+  @apply btn-normal-color2 rounded transition-colors cursor-pointer flex items-center justify-center gap-x-2 whitespace-nowrap;
+}
+
+/* 非激活颜色样式1 */
+.btn-normal-color {
+  @apply bg-gray8 text-gray2 rounded transition-colors cursor-pointer;
+  /* hover的样式 */
+  &:hover {
+    @apply btn-active-color;
+  }
+}
+/* 非激活颜色样式2 */
+.btn-normal-color2 {
+  @apply bg-gray7 text-gray2 rounded transition-colors cursor-pointer;
+  /* hover的样式 */
+  &:hover {
+    @apply btn-active-color;
+  }
+}
+
+/* 激活颜色 */
+.btn-active-color {
+  @apply bg-gray2 text-gray7 rounded transition-colors cursor-pointer;
+}
+
+/* 激活悬浮颜色 */
+.btn-active-hover-color {
+  &:hover {
+    @apply bg-gray1 text-gray8;
+  }
+}

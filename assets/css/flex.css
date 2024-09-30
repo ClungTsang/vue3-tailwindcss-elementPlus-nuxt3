@@ -30,6 +30,10 @@
   @apply flex justify-start items-baseline;
 }
 
+.flex-ss {
+  @apply flex justify-start items-start;
+}
+
 .flex-sc {
   @apply flex justify-start items-center;
 }
