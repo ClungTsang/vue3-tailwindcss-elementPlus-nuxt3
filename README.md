@@ -1,4 +1,4 @@
-# 基于Nuxt3 + TailwindCSS + ElementPlus 的快速开发模板 
+# 基于Nuxt3 + TailwindCSS + ElementPlus 的快速开发模板框架
 
 > - 查看[Nuxt3官方文档](https://nuxt.com/)
 > - 查看[Tailwind文档](https://tailwindcss.com/)
@@ -6,7 +6,6 @@
 ## 要求
 - Node.js-`18.20.4` lts（长期支持）版本
 - pnpm-`9.3.0`版本
-- （非必要）使用[nvm](https://github.com/coreybutler/nvm-windows)来管理node版本
 
 ## 切换国内镜像源
 ``` bash 
