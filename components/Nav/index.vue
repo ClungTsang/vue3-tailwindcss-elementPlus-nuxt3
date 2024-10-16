@@ -1,21 +1,22 @@
 <template>
   <!-- 斜杠模式 -->
-  <div
+  <section
     v-if="separationMode === 'Slash'"
     class="flex-sc cursor-pointer"
     :class="`${wrap}`"
   >
+    <!-- 前缀内容 -->
     <slot name="prefix"></slot>
     <!-- 点击全部 -->
     <nav
       v-if="showAll"
-      :class="`${isCurrentBtnTab(-1)}`"
+      :class="`${isCurrentBtnTab(-1)} ${textSize} ${textColor}`"
       @click="changeTab(-1)"
     >
-      全部
+      <slot name="prefix_action_text"> 全部 </slot>
     </nav>
     <nav
-      :class="`${isCurrentTab(index)} ${textSize}`"
+      :class="`${isCurrentTab(index)} ${textSize} ${textColor}`"
       class="flex-sc transition-colors"
       @click="changeTab(index)"
       v-for="(item, index) in navList"
@@ -29,25 +30,27 @@
         /
       </div>
     </nav>
-  </div>
+  </section>
+
   <!-- 按钮模式 -->
-  <div
+  <section
     v-if="separationMode === 'Space'"
     class="flex-sc cursor-pointer"
     :class="`${gapSize} ${wrap}`"
   >
+    <!-- 前缀内容 -->
     <slot name="prefix"></slot>
     <!-- 点击全部 -->
     <nav
       v-if="showAll"
-      :class="`${isCurrentBtnTab(-1)} ${btnSize} ${hideBorder}`"
+      :class="`${isCurrentBtnTab(-1)} ${btnSize} ${hideBorder} ${textColor}`"
       @click="changeTab(-1)"
     >
-      全部
+      <slot name="prefix_action_text"> 全部 </slot>
     </nav>
     <!-- 列表 -->
     <nav
-      :class="`${isCurrentBtnTab(index)} ${btnSize} ${hideBorder}`"
+      :class="`${isCurrentBtnTab(index)} ${btnSize} ${hideBorder} ${textColor}`"
       class="flex-sc transition-colors"
       @click="changeTab(index)"
       v-for="(item, index) in navList"
@@ -55,7 +58,7 @@
     >
       {{ item.label }}{{ item.count }}
     </nav>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -64,12 +67,13 @@ interface Props {
   modelValue: number; // 下标
   navList: Array<NavProps>; // 导航栏列表
   separationMode: string; // 分隔模式 默认为 Slash / 可填写 Slash 和 Space
-  btnSize: string; // 按钮尺寸: first,two,base
-  textSize: string; // 文字大小: large,first,two,base,tips
-  gapSize: string; // 间距: first,two,base
-  hideBorder: boolean; // 是否显示边框
-  showAll: boolean; // 是否显示前缀
-  wrap: boolean; // row情况下：是否换行
+  btnSize?: string; // 按钮尺寸: first,two,base
+  textSize?: string; // 文字大小: large,first,two,base,tips
+  textColor?: string; // 字体颜色: gray1,gray2,gray3,gray4,gray5,gray6,gray7,gray8,gray9
+  gapSize?: string; // 间距: first,two,base
+  hideBorder?: boolean; // 是否显示边框
+  showAll?: boolean; // 是否显示全部
+  wrap?: boolean; // row情况下：是否换行
 }
 const props = defineProps<Props>();
 const tabIndex = computed({
@@ -80,11 +84,10 @@ const tabIndex = computed({
 });
 
 // 文字模式下：是否选中
-const isCurrentTab = (index) => (tabIndex.value === index ? "text-first hover:text-gray1" : "hover:text-gray2 text-tips-color");
+const isCurrentTab = (index) => (tabIndex.value === index ? "text-first hover:text-gray1" : "hover:text-gray2");
 
 // 按钮模式下：是否选中状态
-const isCurrentBtnTab = (index) =>
-  tabIndex.value === index ? "text-first btn-active-color btn-active-hover-color" : "hover:text-gray2 text-tips-color";
+const isCurrentBtnTab = (index) => (tabIndex.value === index ? "text-first btn-active-color btn-active-hover-color" : "hover:text-gray2");
 
 // 按钮模式下：按钮大小
 const btnSize = computed(() => {
@@ -113,6 +116,32 @@ const textSize = computed(() => {
       return "text-tips";
     default:
       return "text-two";
+  }
+});
+
+// 字体颜色
+const textColor = computed(() => {
+  switch (props.textColor) {
+    case "gray1":
+      return "text-gray1";
+    case "gray2":
+      return "text-gray2";
+    case "gray3":
+      return "text-gray3";
+    case "gray4":
+      return "text-gray4";
+    case "gray5":
+      return "text-gray5";
+    case "gray6":
+      return "text-gray6";
+    case "gray7":
+      return "text-gray7";
+    case "gray8":
+      return "text-gray8";
+    case "gray9":
+      return "text-gray9";
+    default:
+      return "text-gray2";
   }
 });
 
@@ -146,8 +175,11 @@ const emits = defineEmits<{
 
 // 点击回调
 const changeTab = (index) => {
+  // 点击之前的上一个下标
+  const beforeTabIndex = tabIndex.value;
+  // 点击目标的下标
   tabIndex.value = index;
-  emits("click", index);
+  emits("click", index, beforeTabIndex);
 };
 </script>
 
