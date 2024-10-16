@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   devServer: {
     port: 8962
   },
-  modules: ["@element-plus/nuxt", "@nuxtjs/tailwindcss", "@vueuse/nuxt"],
+  modules: ["@element-plus/nuxt", "@nuxtjs/tailwindcss", "@vueuse/nuxt", "dayjs-nuxt"],
   app: {
     head: {
       title: "Nuxt3 + TailwindCSS + ElementPlus 的快速开发模板 ",
@@ -103,4 +103,17 @@ export default defineNuxtConfig({
       cssnano: {},
     },
   },
+  // https://nuxt.com/modules/element-plus
+  elementPlus: {
+    // 设置默认语言：https://nuxt.com/modules/element-plus#defaultlocale
+    defaultLocale: 'zh-CN'
+  },
+  // https://nuxt.com/modules/dayjs
+  // 配置项：https://nuxt.com/modules/dayjs#configuration
+  dayjs: {
+    locales: ['zh-cn'],
+    plugins: ['timezone'],
+    defaultLocale: 'zh-cn',
+    defaultTimezone: 'Asia/Shanghai'
+  }
 });
