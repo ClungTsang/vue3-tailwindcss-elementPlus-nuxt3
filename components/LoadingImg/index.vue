@@ -1,7 +1,16 @@
 <template>
-  <el-skeleton animated :loading="loading" class="w-full" :class="className">
+  <el-skeleton
+    animated
+    :loading="loading"
+    class="w-full"
+    :class="className"
+  >
     <template #template>
-      <el-skeleton-item :variant="variant" :class="className" style="width: 100%; height: 100%" />
+      <el-skeleton-item
+        :variant="variant"
+        :class="className"
+        style="width: 100%; height: 100%"
+      />
     </template>
     <slot></slot>
   </el-skeleton>

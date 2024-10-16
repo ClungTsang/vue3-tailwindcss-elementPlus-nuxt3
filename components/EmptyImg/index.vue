@@ -1,5 +1,8 @@
 <template>
-  <el-empty :class="className" :image-size="size">
+  <el-empty
+    :class="className"
+    :image-size="size"
+  >
     <template #image>
       <slot name="image"></slot>
     </template>
