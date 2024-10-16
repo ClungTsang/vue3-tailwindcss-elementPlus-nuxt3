@@ -56,6 +56,7 @@ export default <Partial<Config>>{
         first: "40px",
         two: "20px",
         base: "10px",
+        tips: "4px",
       },
       container: {
         center: true,
@@ -66,6 +67,8 @@ export default <Partial<Config>>{
       maxWidth: {
         1024: "1024px",
         1280: "1280px",
+        1440: "1440px",
+        1660: "1660px",
         1920: "1920px",
       },
       fontSize: {

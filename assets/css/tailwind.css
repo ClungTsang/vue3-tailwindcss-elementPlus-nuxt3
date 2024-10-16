@@ -8,7 +8,9 @@
     /* --el-color-primary: theme("colors.gray2");
     --el-checkbox-checked-text-color: theme("colors.gray2");
     --el-checkbox-checked-bg-color: theme("colors.gray2");
-    --el-checkbox-checked-input-border-color: theme("colors.gray2"); */
+    --el-checkbox-checked-input-border-color: theme("colors.gray2");
+    --el-slider-main-bg-color: theme("colors.gray2");
+    --el-dialog-padding-primary: 0px; */
   }
   html {
     /* 全局自定义字体 https://www.tailwindcss.cn/docs/font-family#customizing-the-default-font */
