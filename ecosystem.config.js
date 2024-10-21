@@ -4,7 +4,7 @@ module.exports = {
     {
       name: "nuxt3-template",
       script: ".output/server/index.mjs",
-      port: 3000,
+      port: 3010,
       args: "", // 传递给脚本的参数
       watch: true, // 开启监听文件变动重启
       ignore_watch: ["node_modules", "public", "logs"], // 不用监听的文件
