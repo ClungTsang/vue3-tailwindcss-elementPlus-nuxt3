@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   modules: ["@element-plus/nuxt", "@nuxtjs/tailwindcss", "@vueuse/nuxt", "dayjs-nuxt"],
   app: {
     head: {
-      title: "Nuxt3 + TailwindCSS + ElementPlus 的快速开发模板 ",
+      title: "Nuxt3的快速开发模板 ",
       charset: "utf-8",
       bodyAttrs: { style: "height: 100%; margin:0; padding: 0;" },
       link: [{ rel: "icon", href: "/favicon.ico", type: "images/x-icon" }],
@@ -17,7 +17,7 @@ export default defineNuxtConfig({
         {
           hid: "description",
           name: "description",
-          content: "Nuxt3 + TailwindCSS + ElementPlus 的快速开发模板 ",
+          content: "Nuxt3的快速开发模板 ",
         },
         { name: "keywords", content: "your keywords" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -36,22 +36,22 @@ export default defineNuxtConfig({
     // 预渲染规则：默认全部预渲染
     // 参考文档：https://nuxt.com/docs/getting-started/prerendering#selective-pre-rendering
     prerender: {
-      // 允许爬取
+      // 允许网站爬取
       crawlLinks: false,
       // 生效规则
-      routes: [
-        "/robots.txt" // 生成利于搜索引擎爬取的规则文件
-      ],
+      // routes: [
+      //   "/robots.txt" // 生成利于搜索引擎爬取的规则文件
+      // ],
       // 忽略规则
       // ignore: ['/user'],
     },
   },
-  //参考文档：https://nuxtseo.com/robots/api/config
+  // 参考文档：https://nuxtseo.com/robots/api/config
   // 利于搜索引擎爬取的规则
-  robots: {
-    // allow: ["/"], // 自定义填写允许爬取的路径
-    // disallow: ['/user'], // 自定义填写不允许爬取的路径
-  },
+  // robots: { // 安装了nuxt-seo组件后，该配置才生效，不然报错
+  //   allow: ["/"], // 自定义填写允许爬取的路径
+  //   disallow: ['/user'], // 自定义填写不允许爬取的路径
+  // },
   // 参考文档：https://nuxt.com.cn/docs/api/composables/use-runtime-config
   runtimeConfig: {
     // 只有服务端请求时可用私密属性
@@ -73,10 +73,6 @@ export default defineNuxtConfig({
     },
     // 测试环境
     "/test-api/**": {
-      proxy: `${process.env.NUXT_BASE_URL}/**`,
-    },
-    // 生产端
-    "/prod-api/**": {
       proxy: `${process.env.NUXT_BASE_URL}/**`,
     },
   },
@@ -106,14 +102,14 @@ export default defineNuxtConfig({
   // https://nuxt.com/modules/element-plus
   elementPlus: {
     // 设置默认语言：https://nuxt.com/modules/element-plus#defaultlocale
-    defaultLocale: 'zh-CN'
+    defaultLocale: 'zh-cn'
   },
   // https://nuxt.com/modules/dayjs
   // 配置项：https://nuxt.com/modules/dayjs#configuration
-  dayjs: {
-    locales: ['zh-cn'],
-    plugins: ['timezone'],
-    defaultLocale: 'zh-cn',
-    defaultTimezone: 'Asia/Shanghai'
-  }
+  // dayjs: { // 安装了dayjs-nuxt之后配置才生效
+  //   locales: ['zh-cn'],
+  //   plugins: ['timezone'],
+  //   defaultLocale: 'zh-cn',
+  //   defaultTimezone: 'Asia/Shanghai'
+  // }
 });
