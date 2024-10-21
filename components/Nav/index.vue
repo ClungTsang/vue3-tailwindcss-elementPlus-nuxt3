@@ -13,7 +13,7 @@
       :class="`${isCurrentBtnTab(-1)} ${textSize} ${textColor}`"
       @click="changeTab(-1)"
     >
-      <slot name="prefix_action_text"> 全部 </slot>
+      <slot name="prefix_action_text">全部</slot>
     </nav>
     <nav
       :class="`${isCurrentTab(index)} ${textSize} ${textColor}`"
@@ -46,7 +46,7 @@
       :class="`${isCurrentBtnTab(-1)} ${btnSize} ${hideBorder} ${textColor}`"
       @click="changeTab(-1)"
     >
-      <slot name="prefix_action_text"> 全部 </slot>
+      <slot name="prefix_action_text">全部</slot>
     </nav>
     <!-- 列表 -->
     <nav
@@ -64,30 +64,47 @@
 <script setup lang="ts">
 import type { NavProps } from "./hook";
 interface Props {
-  modelValue: number; // 下标
-  navList: Array<NavProps>; // 导航栏列表
-  separationMode: string; // 分隔模式 默认为 Slash / 可填写 Slash 和 Space
-  btnSize?: string; // 按钮尺寸: first,two,base
-  textSize?: string; // 文字大小: large,first,two,base,tips
-  textColor?: string; // 字体颜色: gray1,gray2,gray3,gray4,gray5,gray6,gray7,gray8,gray9
-  gapSize?: string; // 间距: first,two,base
-  hideBorder?: boolean; // 是否显示边框
-  showAll?: boolean; // 是否显示全部
-  wrap?: boolean; // row情况下：是否换行
+  /**下标 */
+  modelValue?: number;
+  /**导航栏列表 */
+  navList: Array<NavProps>;
+  /**分隔模式 默认为 Slash / 可填写 Slash 和 Space */
+  separationMode: string;
+  /**按钮尺寸: first,two,base */
+  btnSize?: string;
+  /**文字大小: large,first,two,base,tips */
+  textSize?: string;
+  /**字体颜色: gray1,gray2,gray3,gray4,gray5,gray6,gray7,gray8,gray9 */
+  textColor?: string;
+  /**间距: first,two,base */
+  gapSize?: string;
+  /**是否显示边框 */
+  hideBorder?: boolean;
+  /**是否显示全部 */
+  showAll?: boolean;
+  /**row情况下：是否换行 */
+  wrap?: boolean;
 }
+// 双向绑定显隐
+const emits = defineEmits<{
+  (e: "update:modelValue", val: number): void;
+  (e: "click", val: number, beforeTabIndex: number): void;
+}>();
+
 const props = defineProps<Props>();
 const tabIndex = computed({
   get: () => props.modelValue,
-  set: (val) => {
+  set: (val: number) => {
     emits("update:modelValue", val);
   },
 });
 
 // 文字模式下：是否选中
-const isCurrentTab = (index) => (tabIndex.value === index ? "text-first hover:text-gray1" : "hover:text-gray2");
+const isCurrentTab = (index: number | undefined) => (tabIndex.value === index ? "text-first hover:text-gray1" : "hover:text-gray2");
 
 // 按钮模式下：是否选中状态
-const isCurrentBtnTab = (index) => (tabIndex.value === index ? "text-first btn-active-color btn-active-hover-color" : "hover:text-gray2");
+const isCurrentBtnTab = (index: number | undefined) =>
+  tabIndex.value === index ? "text-first btn-active-color btn-active-hover-color" : "hover:text-gray2";
 
 // 按钮模式下：按钮大小
 const btnSize = computed(() => {
@@ -167,19 +184,13 @@ const wrap = computed(() => {
   return props.wrap ? "flex-wrap" : "";
 });
 
-// 双向绑定显隐
-const emits = defineEmits<{
-  (e: "update:modelValue", val: number): void;
-  (e: "click", val: number): void;
-}>();
-
 // 点击回调
-const changeTab = (index) => {
+const changeTab = (index: number) => {
   // 点击之前的上一个下标
   const beforeTabIndex = tabIndex.value;
   // 点击目标的下标
   tabIndex.value = index;
-  emits("click", index, beforeTabIndex);
+  emits("click", index, Number(beforeTabIndex));
 };
 </script>
 
