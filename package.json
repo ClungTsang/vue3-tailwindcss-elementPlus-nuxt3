@@ -5,16 +5,14 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "run": "nuxt dev  --dotenv .env.production --host -o",
-    "run:dev": "nuxt dev  --dotenv .env.development --host -o",
-    "run:test": "nuxt dev  --dotenv .env.test --host -o",
-    "build": "nuxt build  --dotenv .env.production",
+    "run": "nuxt dev",
+    "build": "nuxt build ",
     "clean": "nuxt cleanup",
     "preview": "nuxt preview",
-    "generate": "nuxt generate --dotenv .env.production",
+    "generate": "nuxt generate",
     "update": "nuxt upgrade -f",
     "prepare": "nuxt prepare",
-    "analyze": "nuxt build --dotenv .env.production --analyze"
+    "analyze": "nuxt build --analyze"
   },
   "dependencies": {
     "@element-plus/nuxt": "^1.0.10",
