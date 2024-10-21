@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A Nuxt 3 project with Tailwind CSS and Element Plus",
   "private": true,
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "run": "nuxt dev  --dotenv .env.production --host -o",
     "run:dev": "nuxt dev  --dotenv .env.development --host -o",
