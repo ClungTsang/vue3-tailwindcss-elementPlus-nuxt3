@@ -5,7 +5,7 @@
 
 ## 要求
 - Node.js-`18.20.4` lts（长期支持）版本
-- pnpm-`9.3.0`版本
+- pnpm-`9.x`版本
 
 ## 切换国内镜像源
 ``` bash 
@@ -15,7 +15,7 @@ npm config set registry https://registry.npmmirror.com
 ## 安装pnpm包管理器
 如果安装了pnpm请跳过该步骤
 ``` bash 
-npm i pnpm@9.3.0 -g
+npm i pnpm@9.x -g
 ```
 
 ## 安装依赖
