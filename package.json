@@ -16,15 +16,14 @@
   },
   "dependencies": {
     "@element-plus/nuxt": "^1.0.10",
-    "@vueuse/components": "^11.1.0",
-    "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
+    "nuxt3-tailwindcss-elementplus": "file:",
     "vue": "3.5.8"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.12.1",
     "dayjs-nuxt": "^2.1.11",
     "nuxt": "^3.13.2",
-    "sass": "^1.77.8"
+    "sass": "^1.77.8",
   }
 }

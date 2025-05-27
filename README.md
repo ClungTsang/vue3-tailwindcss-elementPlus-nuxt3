@@ -4,7 +4,7 @@
 > - 查看[Tailwind文档](https://tailwindcss.com/)
 
 ## 要求
-- Node.js-`18.20.4` lts（长期支持）版本
+- Node.js-`18.x` lts（长期支持）版本
 - pnpm-`9.x`版本
 
 ## 切换国内镜像源
